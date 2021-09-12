@@ -1,19 +1,27 @@
 const currentHour = moment().hour();
-const allTimeBlocks = $('.container');
+const allTimeBlocks = document.querySelector('#container');
+const workHours = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
+// const allTimeBlocks = $('.container');
 $('#currentDay').text(moment().format("dddd " + "MMMM Do, YYYY, h:m A"));
 
-function appendTimeBlocks(){
    
-    const timeBlock = $('<div></div>').text('9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM').addClass('.hour');
-    const textAreas = $('<textarea></textarea>').attr('Placeholder', 'Enter event here...');
-    const saveBtns = $('<button></button>').addClass('.saveBtn');
+    // const timeBlock = $('<div></div>').text('9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM').addClass('.hour');
+    // const textAreas = $('<textarea></textarea>').attr('Placeholder', 'Enter event here...');
+    // const saveBtns = $('<button></button>').addClass('.saveBtn');
+    // $('.container').append(allTimeBlocks, timeBlock, textAreas, saveBtns);
 
-    $('.container').append(allTimeBlocks, timeBlock, textAreas, saveBtns);
+for (let i = 0; i < workHours.length; i++){
 
-
-for (let i = 0; i < 9; i++){
-    const eachTimeBlock = timeBlock[i];
+    const timeBlocks = workHours[i]
     console.log(i);
 
+    const timeBlock = document.createElement('div');
+    const textAreas = document.createElement('textarea');
+    const saveBtns = document.createElement('button');
+    
+    timeBlock.textContent = timeBlocks;
+    timeBlock.appendChild(textAreas);
+    timeBlock.appendChild(saveBtns);
 
-}}
+    allTimeBlocks.appendChild(timeBlock);
+};
