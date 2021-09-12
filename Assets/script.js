@@ -25,4 +25,12 @@ for (let i = 0; i < workHours.length; i++){
     )
 
     
-};
+
+
+function hTrail(){
+    console.log(timeBlocks,currentHour)
+    if (workHours[i] == currentHour)
+    $(this).addClass('present')
+    
+}};
+hTrail();
