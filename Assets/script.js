@@ -23,6 +23,22 @@ for (let i = 0; i < workHours.length; i++){
             $(this).addClass('hour')
         }
     )
+$('button').each(
+    function(){
+        $(this).addClass('saveBtn')
+    }
+)
+
+    $('button').each(
+        function(){
+            $(this);document.createElement('i')
+            $('i').each(
+                function(){
+                    $(this).addClass('fas fa-save')
+                }
+            )
+        }
+    )
 
     
 
