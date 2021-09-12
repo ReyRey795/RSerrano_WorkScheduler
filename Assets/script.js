@@ -17,4 +17,12 @@ for (let i = 0; i < workHours.length; i++){
     timeBlock.appendChild(saveBtns);
 
     allTimeBlocks.appendChild(timeBlock);
+
+    $('div').each(
+        function(){
+            $(this).addClass('hour')
+        }
+    )
+
+    
 };
