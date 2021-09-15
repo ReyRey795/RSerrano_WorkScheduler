@@ -20,8 +20,8 @@ for (let i = 0; i < arrayOfObjects.length; i++){
     timeBlockContainer.text(timeBlock.time);
     saveBtn.addClass('saveBtn');
     saveBtn.append(iCon);
-    saveBtn.val(timeBlock.mtime);
-    textArea.attr('id', `textarea-${timeBlock.mtime}`)
+    saveBtn.val(timeBlockHour);
+    textArea.attr('id', `textarea-${timeBlockHour}`)
     saveBtn.click(function(){
         const btnValue = $(this).val()
         const txtValue = $(`#textarea-${btnValue}`).val()
@@ -31,7 +31,7 @@ for (let i = 0; i < arrayOfObjects.length; i++){
     })
 
     //if (localStorage.getItem(timeBlock.mtime)) {
-        const xVal = localStorage.getItem(timeBlock.mtime)
+        const xVal = localStorage.getItem(timeBlockHour)
         textArea.val(xVal)
     //}
     
@@ -46,7 +46,7 @@ for (let i = 0; i < arrayOfObjects.length; i++){
         timeBlockContainer.addClass('future')
     }
     else if (currentHour === timeBlockHour){
-        timeBlockContainer.addClass('current')
+        timeBlockContainer.addClass('present')
     }
 
     timeBlocks.append(timeBlockContainer);
